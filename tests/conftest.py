@@ -1,13 +1,17 @@
 import pytest
 from selenium import webdriver
-from selenium.webdriver.chrome.service import Service
-from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.edge.service import Service
+from selenium.webdriver.edge.options import Options
+
 
 @pytest.fixture
 def driver():
     options = Options()
     options.add_argument("--start-maximized")
-    service = Service("chromedriver.exe")  # caminho do driver
-    driver = webdriver.Chrome(service=service, options=options)
+
+    # Caminho para o msedgedriver.exe
+    service = Service(r"C:\Users\deivi\Downloads\edgedriver_win32\msedgedriver.exe")
+    driver = webdriver.Edge(service=service, options=options)
+
     yield driver
     driver.quit()

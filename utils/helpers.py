@@ -1,23 +1,17 @@
 import time
 import random
-from selenium.webdriver.common.by import By
 
 def wait(seconds=2):
-    """Espera fixa (não recomendado para produção, melhor usar WebDriverWait)."""
+    """Espera fixa (somente para visualização, prefira WebDriverWait em produção)."""
     time.sleep(seconds)
 
-def random_email():
-    """Gera um e-mail fake para cadastro ou testes."""
-    return f"teste_{random.randint(1000,9999)}@exemplo.com"
+def random_name():
+    nomes = ["João", "Maria", "Carlos", "Ana", "Paulo"]
+    return random.choice(nomes)
 
-def random_username():
-    """Gera um usuário fake."""
-    return f"user_{random.randint(1000,9999)}"
+def random_lastname():
+    sobrenomes = ["Silva", "Souza", "Oliveira", "Costa", "Ferreira"]
+    return random.choice(sobrenomes)
 
-def element_exists(driver, locator: tuple) -> bool:
-    """Verifica se um elemento existe na página."""
-    try:
-        driver.find_element(*locator)
-        return True
-    except:
-        return False
+def random_zip():
+    return str(random.randint(10000, 99999))

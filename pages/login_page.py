@@ -2,12 +2,12 @@ from selenium.webdriver.common.by import By
 from .base_page import BasePage
 
 class LoginPage(BasePage):
-    USERNAME_INPUT = (By.ID, "username")
+    USERNAME_INPUT = (By.ID, "user-name")
     PASSWORD_INPUT = (By.ID, "password")
-    LOGIN_BUTTON = (By.ID, "login")
+    LOGIN_BUTTON = (By.ID, "login-button")
 
     def open(self):
-        self.visit("https://exemplo.com/login")
+        self.visit("https://www.saucedemo.com/")
 
     def login(self, username, password):
         self.type(self.USERNAME_INPUT, username)
